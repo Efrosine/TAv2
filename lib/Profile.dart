@@ -20,8 +20,8 @@ class Profile extends StatelessWidget {
           Row(
             children: [
               Container(
-                height: 200,
-                width: 200,
+                height: 75,
+                width: 75,
                 margin: const EdgeInsets.all(24),
                 child: CircleAvatar(
                     backgroundImage: AssetImage("assets/images/PasFoto.png"),
@@ -31,34 +31,34 @@ class Profile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 100,
+                    width: 60,
                     child: Text('Anggota 1'),
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('Nama'),
                       ),
-                      Container(width: 300, child: Text('Fajar Triatmojo'))
+                      Container(width: 150, child: Text('Fajar Triatmojo'))
                     ],
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('NIM'),
                       ),
-                      Container(width: 300, child: Text('220605110152'),)
+                      Container(width: 150, child: Text('220605110152'),)
                     ],
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('Asal'),
                       ),
-                      Container(width: 300, child: Text('Malang'))
+                      Container(width: 150, child: Text('Malang'))
                     ],
                   )
                 ],
@@ -67,8 +67,8 @@ class Profile extends StatelessWidget {
           ),Row(
             children: [
               Container(
-                height: 200,
-                width: 200,
+                height: 75,
+                width: 75,
                 margin: const EdgeInsets.all(24),
                 child: CircleAvatar(
                     backgroundImage: AssetImage("assets/images/PasFoto.png"),
@@ -78,34 +78,34 @@ class Profile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 100,
+                    width: 60,
                     child: Text('Anggota 2'),
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('Nama'),
                       ),
-                      Container(width: 300, child: Text('Fajar Triatmojo'))
+                      Container(width: 150, child: Text('Fajar Triatmojo'))
                     ],
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('NIM'),
                       ),
-                      Container(width: 300, child: Text('220605110152'),)
+                      Container(width: 150, child: Text('220605110152'),)
                     ],
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('Asal'),
                       ),
-                      Container(width: 300, child: Text('Malang'))
+                      Container(width: 150, child: Text('Malang'))
                     ],
                   )
                 ],
@@ -114,8 +114,8 @@ class Profile extends StatelessWidget {
           ),Row(
             children: [
               Container(
-                height: 200,
-                width: 200,
+                height: 75,
+                width: 75,
                 margin: const EdgeInsets.all(24),
                 child: CircleAvatar(
                     backgroundImage: AssetImage("assets/images/PasFoto.png"),
@@ -125,34 +125,34 @@ class Profile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 100,
+                    width: 60,
                     child: Text('Anggota 3'),
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('Nama'),
                       ),
-                      Container(width: 300, child: Text('Fajar Triatmojo'))
+                      Container(width: 150, child: Text('Fajar Triatmojo'))
                     ],
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('NIM'),
                       ),
-                      Container(width: 300, child: Text('220605110152'),)
+                      Container(width: 150, child: Text('220605110152'),)
                     ],
                   ),
                   Row(
                     children: [
                       Container(
-                        width: 100,
+                        width: 60,
                         child: Text('Asal'),
                       ),
-                      Container(width: 300, child: Text('Malang'))
+                      Container(width: 150, child: Text('Malang'))
                     ],
                   )
                 ],

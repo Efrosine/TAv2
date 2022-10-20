@@ -8,35 +8,11 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Maliki News'),
-        backgroundColor: Colors.green,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Profile(),
-                    ));
-              },
-              icon: Icon(Icons.person,color: Colors.white,))
-        ],
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(Icons.arrow_back),
-        ),
-      ),
       body: ListView(
         children: [
           CarouselSlider(
             options: CarouselOptions(
-              autoPlay: true,
-              height: 300,
-              enlargeCenterPage: true,
-            ),
+                autoPlay: true, enlargeCenterPage: true, aspectRatio: 16 / 9),
             items: [
               Container(
                 width: double.infinity,
@@ -62,7 +38,22 @@ class Dashboard extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48,vertical:24),
+            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
+            child: Stack(children: [
+              Image.asset('assets/images/news1.jpg'),
+              Positioned(
+                bottom: -1,
+                  child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(width: 2, color: Colors.black)),child: Text(
+                    'HUMAS-Universitas Islam Negeri Maulana Malik Ibrahim Malang (UIN Maliki Malang) gelar Seminar Nasional tentang politik dan hukum. Acara yang diinisiasi oleh Dewan Eksekutif Mahasiswa(DEMA) UIN Maliki Malang ini mengambil tema Rekonstruksi Demokrasi Serta Pro Kontra Kampanye Pemilu Tahun 2024 di Lingkungan Sivitas')
+              ,
+              ))
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
             child: Column(
               children: [
                 Image.asset('assets/images/news1.jpg'),
@@ -72,7 +63,7 @@ class Dashboard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48,vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
             child: Column(
               children: [
                 Image.asset('assets/images/news2.jpg'),
@@ -82,7 +73,7 @@ class Dashboard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48,vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
             child: Column(
               children: [
                 Image.asset('assets/images/news3.jpg'),
