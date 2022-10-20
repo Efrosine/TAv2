@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-import 'Dasboardv2.dart';
-import 'Dashboard.dart';
+import 'Dasboard.dart';
+import 'Tab_Terbaru.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -108,7 +108,7 @@ class Login extends StatelessWidget {
                     height: 30,
                   ),
                   GestureDetector(
-                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Dasboardv2(),));},
+                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Dasboard(),));},
                     child: Container(
                         height: 50,
                         decoration: BoxDecoration(

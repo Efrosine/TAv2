@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:tugas_akhir_v2/Dashboard.dart';
+import 'package:tugas_akhir_v2/Tab_Terbaru.dart';
 import 'package:tugas_akhir_v2/Profile.dart';
-import 'package:tugas_akhir_v2/dasv3.dart';
+import 'package:tugas_akhir_v2/Tab_Pengumuman.dart';
 
-import 'home.dart';
+import 'Tab_Kegiatan.dart';
 
-class Dasboardv2 extends StatelessWidget {
-  const Dasboardv2({super.key});
+class Dasboard extends StatelessWidget {
+  const Dasboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +49,14 @@ class Dasboardv2 extends StatelessWidget {
                         color: Colors.white, fontWeight: FontWeight.bold)),
               ),
               Tab(
-                child: Text('INFORMATIKA',
+                child: Text('FAKULTAS',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
               ),
             ]),
           ),
           body: TabBarView(
-            children: [Dashboard(), dasv3(), Home(), dasv3()],
+            children: [TabTerbaru(), TabPengumuman(), TabKegiatan(), TabPengumuman()],
           )),
     );
   }

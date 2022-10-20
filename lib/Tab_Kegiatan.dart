@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'Berita.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class TabKegiatan extends StatelessWidget {
+  const TabKegiatan({super.key});
 
   @override
   Widget build(BuildContext context) {

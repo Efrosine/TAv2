@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tugas_akhir_v2/Profile.dart';
+import 'package:tugas_akhir_v2/TitleOverImage.dart';
 
-class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+class TabTerbaru extends StatelessWidget {
+  const TabTerbaru({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +13,12 @@ class Dashboard extends StatelessWidget {
         children: [
           CarouselSlider(
             options: CarouselOptions(
-                autoPlay: true, enlargeCenterPage: true, aspectRatio: 16 / 9),
+                autoPlay: true),
             items: [
-              Container(
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/images/news1.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
+              TitleOverImage(
+                  image: 'assets/images/news1.jpg',
+                  title:
+                      'HUMAS-Universitas Islam Negeri Maulana \n Malik Ibrahim Malang (UIN Maliki Malang)'),
               Container(
                 width: double.infinity,
                 child: Image.asset(
@@ -39,17 +37,27 @@ class Dashboard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
-            child: Stack(children: [
-              Image.asset('assets/images/news1.jpg'),
+            child:
+                Stack(alignment: AlignmentDirectional.bottomCenter, children: [
+              Column(
+                children: [
+                  Image.asset('assets/images/news1.jpg'),
+                  SizedBox(
+                    height: 20,
+                  )
+                ],
+              ),
               Positioned(
-                bottom: -1,
+                  bottom: 0,
                   child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(width: 2, color: Colors.black)),child: Text(
-                    'HUMAS-Universitas Islam Negeri Maulana Malik Ibrahim Malang (UIN Maliki Malang) gelar Seminar Nasional tentang politik dan hukum. Acara yang diinisiasi oleh Dewan Eksekutif Mahasiswa(DEMA) UIN Maliki Malang ini mengambil tema Rekonstruksi Demokrasi Serta Pro Kontra Kampanye Pemilu Tahun 2024 di Lingkungan Sivitas')
-              ,
-              ))
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 2, color: Colors.black)),
+                    child: Text(
+                      'HUMAS-Universitas Islam Negeri Maulana \n Malik Ibrahim Malang (UIN Maliki Malang)',
+                      textAlign: TextAlign.center,
+                    ),
+                  ))
             ]),
           ),
           Padding(
