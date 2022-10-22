@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:tugas_akhir_v2/ListAdapter/Terbaru.dart';
 import 'package:tugas_akhir_v2/Profile.dart';
-import 'package:tugas_akhir_v2/TitleOverImage.dart';
+import 'package:tugas_akhir_v2/classHelper/CarauselImage.dart';
+import 'package:tugas_akhir_v2/classHelper/Fokus.dart';
+import 'package:tugas_akhir_v2/classHelper/TitleOverImage.dart';
 
 class TabTerbaru extends StatelessWidget {
   const TabTerbaru({super.key});
@@ -11,82 +14,45 @@ class TabTerbaru extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          CarouselSlider(
+          CarouselSlider.builder(
             options: CarouselOptions(
-                autoPlay: true),
-            items: [
-              TitleOverImage(
-                  image: 'assets/images/news1.jpg',
-                  title:
-                      'HUMAS-Universitas Islam Negeri Maulana \n Malik Ibrahim Malang (UIN Maliki Malang)'),
-              Container(
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/images/news2.jpg',
-                  fit: BoxFit.cover,
+                height: 200, autoPlay: true, viewportFraction: 1),
+            itemCount: terbaru.length,
+            itemBuilder: (context, index, realIndex) => CarauselImage(
+                title: terbaru[index].title, image: terbaru[index].image),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 12,
                 ),
-              ),
-              Container(
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/images/news3.jpg',
-                  fit: BoxFit.cover,
+                Text(
+                  'FOKUS',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
-            child:
-                Stack(alignment: AlignmentDirectional.bottomCenter, children: [
-              Column(
-                children: [
-                  Image.asset('assets/images/news1.jpg'),
-                  SizedBox(
-                    height: 20,
-                  )
-                ],
-              ),
-              Positioned(
-                  bottom: 0,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(width: 2, color: Colors.black)),
-                    child: Text(
-                      'HUMAS-Universitas Islam Negeri Maulana \n Malik Ibrahim Malang (UIN Maliki Malang)',
-                      textAlign: TextAlign.center,
-                    ),
-                  ))
-            ]),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
-            child: Column(
-              children: [
-                Image.asset('assets/images/news1.jpg'),
-                Text(
-                    'HUMAS-Universitas Islam Negeri Maulana Malik Ibrahim Malang (UIN Maliki Malang) gelar Seminar Nasional tentang politik dan hukum. Acara yang diinisiasi oleh Dewan Eksekutif Mahasiswa(DEMA) UIN Maliki Malang ini mengambil tema Rekonstruksi Demokrasi Serta Pro Kontra Kampanye Pemilu Tahun 2024 di Lingkungan Sivitas')
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
-            child: Column(
-              children: [
-                Image.asset('assets/images/news2.jpg'),
-                Text(
-                    'Acara yang berlangsung secara offline itu tidak hanya dihadiri oleh sivitas akademika UIN Maliki Malang saja namun juga para tamu undangan Mahasiswa dari berbagai Perguruan tinggi baik yang negeri maupun swasta di Malang Raya, khususnya bagi mereka yang sedang menempuh studi di bidang politik dan hukum. Sehingga tidak tanggung-tangung panitia penyelenggara pun menghadirkan dua tokoh yang cukup familiar, berkompeten dan ahli di bidang politik dan hukum sebagai narasumbernya, yakni Muhammad Arbayanto, SH.,M.H(Komisioner Komisi Pemilihan Umum Provinsi Jawa Timur) dan Prof. Saifullah, SH., M. Hum(Pakar Hukum Tata Negara sekaligus Guru besar UIN Maliki Malang).')
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
-            child: Column(
-              children: [
-                Image.asset('assets/images/news3.jpg'),
-                Text(
-                    'Dalam sambutannya, mewakili pimpinan universitas yang dalam hal ini dihadiri oleh Kepala Biro Administrasi, Akademik, Kemahasiswaan dan Kerjasama (Kabiro AAKK) Dr. Barnoto, M. Pd.I menyampaikan selamat dan terima kasih atas terselenggaranya acara tersebut. Bahkan Pak Kabiro, begitu sapaan akrabnya ini juga memberikan kesan sekaligus mengapresiasinya. "Begitu pentingnya acara semacam ini karena memiliki banyak manfaat jadi tidak hanya berkumpul diskusi tanpa adanya outputnya yang jelas. Apalagi nanti berkaitan dengan adanya kampanye yang masuk di kampus pada pemilu tahun 2024 padahal itu tidak ada sebelumnya di pemilu tahun 2019 yang lalu, "ucapnya.')
+                SizedBox(
+                  height: 16,
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: terbaru.length,
+                  itemBuilder: (context, index) => Fokus(
+                      image: terbaru[index].image, title: terbaru[index].title),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: terbaru.length,
+                  itemBuilder: (context, index) => TitleOverImage(
+                      image: terbaru[index].image, title: terbaru[index].title),
+                )
               ],
             ),
           )

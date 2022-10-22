@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:tugas_akhir_v2/Tab_Fakultas.dart';
 import 'package:tugas_akhir_v2/Tab_Terbaru.dart';
 import 'package:tugas_akhir_v2/Profile.dart';
-import 'package:tugas_akhir_v2/Tab_Pengumuman.dart';
-
 import 'Tab_Kegiatan.dart';
 
 class Dasboard extends StatelessWidget {
@@ -13,7 +12,7 @@ class Dasboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
           appBar: AppBar(
             title: Text('Maliki News'),
@@ -38,11 +37,7 @@ class Dasboard extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
               ),
-              Tab(
-                child: Text('PENGUMUMAN',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold)),
-              ),
+              
               Tab(
                 child: Text('KEGIATAN',
                     style: TextStyle(
@@ -56,7 +51,7 @@ class Dasboard extends StatelessWidget {
             ]),
           ),
           body: TabBarView(
-            children: [TabTerbaru(), TabPengumuman(), TabKegiatan(), TabPengumuman()],
+            children: [TabTerbaru(), TabKegiatan(), TabFakultas()],
           )),
     );
   }
