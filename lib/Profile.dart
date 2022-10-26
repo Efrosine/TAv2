@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:tugas_akhir_v2/ListAdapter/DataProfile.dart';
+import 'package:tugas_akhir_v2/classHelper/ProfileView.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -7,160 +8,33 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('OUT TEAM'),
+        appBar: AppBar(
+          title: Text('OUT TEAM'),
           leading: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.arrow_back),
-      ),backgroundColor: Colors.green,),
-
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                height: 75,
-                width: 75,
-                margin: const EdgeInsets.all(24),
-                child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/PasFoto.png"),
-                    backgroundColor: Colors.white),
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back),
+          ),
+          backgroundColor: Colors.green,
+        ),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24,24,24,0),
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: ScrollPhysics(),
+                itemCount: dataProfile.length,
+                itemBuilder: (context, index) => ProfileView(
+                    image: dataProfile[index].image,
+                    name: dataProfile[index].nama,
+                    nim: dataProfile[index].nim,
+                    asal: dataProfile[index].asal,
+                    nomor: index),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 60,
-                    child: Text('Anggota 1'),
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('Nama'),
-                      ),
-                      Container(width: 150, child: Text('Fajar Triatmojo'))
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('NIM'),
-                      ),
-                      Container(width: 150, child: Text('220605110152'),)
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('Asal'),
-                      ),
-                      Container(width: 150, child: Text('Malang'))
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),Row(
-            children: [
-              Container(
-                height: 75,
-                width: 75,
-                margin: const EdgeInsets.all(24),
-                child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/PasFoto.png"),
-                    backgroundColor: Colors.white),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 60,
-                    child: Text('Anggota 2'),
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('Nama'),
-                      ),
-                      Container(width: 150, child: Text('Fajar Triatmojo'))
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('NIM'),
-                      ),
-                      Container(width: 150, child: Text('220605110152'),)
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('Asal'),
-                      ),
-                      Container(width: 150, child: Text('Malang'))
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),Row(
-            children: [
-              Container(
-                height: 75,
-                width: 75,
-                margin: const EdgeInsets.all(24),
-                child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/PasFoto.png"),
-                    backgroundColor: Colors.white),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 60,
-                    child: Text('Anggota 3'),
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('Nama'),
-                      ),
-                      Container(width: 150, child: Text('Fajar Triatmojo'))
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('NIM'),
-                      ),
-                      Container(width: 150, child: Text('220605110152'),)
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        child: Text('Asal'),
-                      ),
-                      Container(width: 150, child: Text('Malang'))
-                    ],
-                  )
-                ],
-              )
-            ],
-          )
-        ],
-      ),
-    );
+            )
+          ],
+        ));
   }
 }

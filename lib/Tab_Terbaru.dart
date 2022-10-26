@@ -16,7 +16,7 @@ class TabTerbaru extends StatelessWidget {
         children: [
           CarouselSlider.builder(
             options: CarouselOptions(
-                height: 200, autoPlay: true, viewportFraction: 1),
+                height: 200, autoPlay: true,autoPlayAnimationDuration: Duration(milliseconds: 350), viewportFraction: 1),
             itemCount: terbaru.length,
             itemBuilder: (context, index, realIndex) => CarauselImage(
                 title: terbaru[index].title, image: terbaru[index].image),
@@ -44,7 +44,7 @@ class TabTerbaru extends StatelessWidget {
                   physics: ScrollPhysics(),
                   itemCount: terbaru.length,
                   itemBuilder: (context, index) => Fokus(
-                      image: terbaru[index].image, title: terbaru[index].title),
+                      image: terbaru[index].image, title: terbaru[index].title,artikel: terbaru[index].artikel),
                 ),
                 ListView.builder(
                   shrinkWrap: true,
