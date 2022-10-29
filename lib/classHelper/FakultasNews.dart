@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'NewsView.dart';
+
 class FakultasNews extends StatelessWidget {
   final String title, image, artikel;
 
@@ -13,7 +15,9 @@ class FakultasNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+           Navigator.push(context, MaterialPageRoute(builder: (context) => NewsView(title: title, iamge: image, artikel: artikel)));
+        },
         child: Column(
           children: [
             Padding(
@@ -32,7 +36,7 @@ class FakultasNews extends StatelessWidget {
                   SizedBox(
                     height: 6,
                   ),
-                  Text('         ' + artikel)
+                  Text('         ' + artikel,textAlign: TextAlign.justify,)
                 ],
               ),
             ),

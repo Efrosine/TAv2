@@ -9,7 +9,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('OUT TEAM'),
+          title: Text('OUR TEAM'),
           leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -21,17 +21,21 @@ class Profile extends StatelessWidget {
         body: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(24,24,24,0),
+              padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
                 itemCount: dataProfile.length,
                 itemBuilder: (context, index) => ProfileView(
-                    image: dataProfile[index].image,
-                    name: dataProfile[index].nama,
-                    nim: dataProfile[index].nim,
-                    asal: dataProfile[index].asal,
-                    nomor: index),
+                  image: dataProfile[index].image,
+                  name: dataProfile[index].nama,
+                  nim: dataProfile[index].nim,
+                  asal: dataProfile[index].asal,
+                  nomor: index + 1,
+                  ig: dataProfile[index].ig,
+                  linkin: dataProfile[index].linkin,
+                  twt: dataProfile[index].twt,
+                ),
               ),
             )
           ],

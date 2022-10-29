@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:tugas_akhir_v2/ListAdapter/Kegiatan.dart';
 
+import 'classHelper/NewsView.dart';
+
 class TabKegiatan extends StatelessWidget {
   const TabKegiatan({super.key});
 
@@ -39,7 +41,9 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+         Navigator.push(context, MaterialPageRoute(builder: (context) => NewsView(title: pengu.title, iamge: pengu.image, artikel: pengu.text)));
+      },
       child: Column(
         children: [
           Padding(
@@ -51,7 +55,7 @@ class ItemCard extends StatelessWidget {
                   SizedBox(height: 12,),
                   Image.asset(pengu.image),
                   SizedBox(height: 6,),
-                  Text('         '+pengu.text)
+                  Text('         '+pengu.text,textAlign: TextAlign.justify,)
                 ],
               )),
           Divider(

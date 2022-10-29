@@ -27,7 +27,16 @@ class _homeState extends State<SplahScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: Image.asset('assets/images/uin.png'),
+      child: Container(
+          color: Colors.white,
+          child: Stack(children: [
+            Positioned(
+                top: MediaQuery.of(context).size.height * .2,
+                left: MediaQuery.of(context).size.width * .25,
+                right: MediaQuery.of(context).size.width * .25,
+                // height: MediaQuery.of(context).size.height,
+                child: Image.asset('assets/images/uin.png')),
+          ])),
     );
   }
 }

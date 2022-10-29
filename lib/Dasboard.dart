@@ -31,7 +31,7 @@ class Dasboard extends StatelessWidget {
                     color: Colors.white,
                   ))
             ],
-            bottom: TabBar(indicatorColor: Colors.white,isScrollable: true, labelColor: Colors.green, tabs: [
+            bottom: TabBar(indicatorColor: Colors.white,labelColor: Colors.green, tabs: [
               Tab(
                 child: Text('TERBARU',
                     style: TextStyle(

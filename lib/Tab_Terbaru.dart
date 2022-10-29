@@ -19,7 +19,7 @@ class TabTerbaru extends StatelessWidget {
                 height: 200, autoPlay: true,autoPlayAnimationDuration: Duration(milliseconds: 350), viewportFraction: 1),
             itemCount: terbaru.length,
             itemBuilder: (context, index, realIndex) => CarauselImage(
-                title: terbaru[index].title, image: terbaru[index].image),
+                title: terbaru[index].title, image: terbaru[index].image,artikel: terbaru[index].artikel),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -51,7 +51,7 @@ class TabTerbaru extends StatelessWidget {
                   physics: ScrollPhysics(),
                   itemCount: terbaru.length,
                   itemBuilder: (context, index) => TitleOverImage(
-                      image: terbaru[index].image, title: terbaru[index].title),
+                      image: terbaru[index].image, title: terbaru[index].title,artikel: terbaru[index].artikel,),
                 )
               ],
             ),

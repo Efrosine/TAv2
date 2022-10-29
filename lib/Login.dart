@@ -10,7 +10,8 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(resizeToAvoidBottomInset: false,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 244, 248, 243),
       body: Container(
         child: Column(
@@ -27,15 +28,13 @@ class Login extends StatelessWidget {
                     top: 93,
                     width: 80,
                     height: 90,
-                    child: ColorFiltered(
+                    child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                      image: AssetImage('assets/images/vectorB.png'),
                       colorFilter: ColorFilter.mode(
                           Color.fromRGBO(72, 167, 11, 1), BlendMode.color),
-                      child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/vectorB.png')))),
-                    )),
+                    )))),
                 Positioned(
                     left: 90,
                     top: 50,
@@ -108,7 +107,13 @@ class Login extends StatelessWidget {
                     height: 30,
                   ),
                   GestureDetector(
-                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Dasboard(),));},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Dasboard(),
+                          ));
+                    },
                     child: Container(
                         height: 50,
                         decoration: BoxDecoration(
